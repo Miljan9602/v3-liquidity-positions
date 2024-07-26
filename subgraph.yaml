@@ -1,0 +1,41 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: NonfungibleTokenPositionManagerAddress
+    network: sei-mainnet
+    source:
+      address: "0xCB796653533a4C0982D7C698932e2008A32209AA"
+      abi: NonfungibleTokenPositionManagerAddress
+      startBlock: 91592737
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Collect
+        - DecreaseLiquidity
+        - IncreaseLiquidity
+        - Transfer
+      abis:
+        - name: NonfungibleTokenPositionManagerAddress
+          file: ./abis/NonfungibleTokenPositionManagerAddress.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Collect(indexed uint256,address,uint256,uint256)
+          handler: handleCollect
+        - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleDecreaseLiquidity
+        - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleIncreaseLiquidity
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/nonfungible-token-position-manager-address.ts

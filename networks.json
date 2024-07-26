@@ -1,0 +1,8 @@
+{
+  "sei-mainnet": {
+    "NonfungibleTokenPositionManagerAddress": {
+      "address": "0xCB796653533a4C0982D7C698932e2008A32209AA",
+      "startBlock": 91592737
+    }
+  }
+}
