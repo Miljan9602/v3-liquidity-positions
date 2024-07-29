@@ -11,6 +11,8 @@
     "test": "graph test"
   },
   "dependencies": {
+    "@miljan9602/dswap-v3-sdk": "https://github.com/miljan9602/dswap-v3-sdk",
+    "@miljan9602/dswap-sdk-core": "https://github.com/miljan9602/dswap-sdk-core",
     "@graphprotocol/graph-cli": "0.78.0",
     "@graphprotocol/graph-ts": "0.32.0"
   },

@@ -25,13 +25,9 @@ dataSources:
       abis:
         - name: NonfungibleTokenPositionManagerAddress
           file: ./abis/NonfungibleTokenPositionManagerAddress.json
+        - name: ERC20
+          file: ./abis/ERC20.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: Collect(indexed uint256,address,uint256,uint256)
-          handler: handleCollect
         - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
           handler: handleDecreaseLiquidity
         - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)

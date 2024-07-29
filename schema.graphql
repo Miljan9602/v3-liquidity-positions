@@ -60,3 +60,25 @@ type Transfer @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type Token @entity(immutable: true) {
+  id: Bytes!
+  decimals: BigInt!
+  symbol: String!
+  name: String!
+}
+
+type LiquidityPosition @entity {
+  id: Bytes!
+  owner: Bytes! # address
+  liquidity: BigInt! # uint128
+  token0: String!
+  token1: String!
+  fee: BigInt!
+  poolAddress: String!
+
+  amount0: BigInt! # uint256
+  amount1: BigInt! # uint256
+  lastUpdatedBlockNumber: BigInt!
+  lastUpdatedBlockTimestamp: BigInt!
+}
